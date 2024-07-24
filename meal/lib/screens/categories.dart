@@ -19,7 +19,7 @@ class CategoriesScreen extends StatelessWidget {
           children: const [
             Text(
               "1",
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.pink),
             ),
             Text(
               "2",
@@ -27,7 +27,7 @@ class CategoriesScreen extends StatelessWidget {
             ),
             Text(
               "3",
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.orange),
             ),
             Text(
               "4",
