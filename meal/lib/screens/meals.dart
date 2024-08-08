@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:meal/data/dummy_data.dart';
 import 'package:meal/data/meal.dart';
 
 class MealScreen extends StatelessWidget {
@@ -42,9 +43,11 @@ class MealScreen extends StatelessWidget {
       );
     }
     return Scaffold(
-        appBar: AppBar(
-          title: Text(title),
-        ),
-        body: content);
+      appBar: AppBar(
+        title: Text(title),
+      ),
+      body: content,
+      backgroundColor: Colors.white,
+    );
   }
 }

@@ -26,10 +26,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: theme,
-      home: const MealScreen(
-        title: 'SOME',
-        meals: dummyMeals,
-      ),
+      home: CategoriesScreen(),
     );
   }
 }
