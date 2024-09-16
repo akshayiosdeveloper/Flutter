@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:meal/data/dummy_data.dart';
@@ -6,14 +8,23 @@ import 'package:meal/screens/meals_details.dart';
 import 'package:meal/widgets/meal_item.dart';
 
 class MealScreen extends StatelessWidget {
-  const MealScreen({super.key, required this.title, required this.meals});
+  const MealScreen(
+      {super.key,
+      this.title,
+      required this.meals,
+      required this.onToggleFavorites});
 
-  final String title;
+  final String? title;
   final List<Meal> meals;
+  final void Function(Meal meal) onToggleFavorites;
+
   void selectMeal(BuildContext context, Meal meal) {
+    print('Meals screens🍔');
+    print('togle:${onToggleFavorites}');
     final mealDetailScreen = MaterialPageRoute(
       builder: (ctx) => MealsDetails(
         meal: meal,
+        onToggleFavorites: onToggleFavorites,
       ),
     );
     Navigator.of(context).push(mealDetailScreen);
@@ -54,9 +65,12 @@ class MealScreen extends StatelessWidget {
         ),
       );
     }
+    if (title == null) {
+      return content;
+    }
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(title!),
       ),
       body: content,
       backgroundColor: Colors.white,
