@@ -10,3 +10,4 @@ Adding navigation and passing data between different categories
 adding card view in the meal app.
 add details screen in meals app
 add steps and instruction in meal app
+add tabbar in meal app and add logic for favorite dishes on 16 sep 2024
