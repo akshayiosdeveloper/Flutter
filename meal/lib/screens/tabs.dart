@@ -40,6 +40,14 @@ class _TabsScreenState extends State<TabsScreen> {
     print("After favorite😇 ${favouriteMeals}");
   }
 
+  void _setScreen(String identifier) {
+    print("identifier:${identifier}");
+    if (identifier == 'Filters') {
+    } else {
+      Navigator.of(context).pop();
+    }
+  }
+
   void _selectPage(int index) {
     setState(() {
       _selectedPageIndex = index;
@@ -63,7 +71,9 @@ class _TabsScreenState extends State<TabsScreen> {
       appBar: AppBar(
         title: Text(activePageTitle),
       ),
-      drawer: const MainDrawer(),
+      drawer: MainDrawer(
+        onSelectScreen: _setScreen,
+      ),
       body: activePage,
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,
